@@ -1,6 +1,22 @@
 import Profile from "./Profile";
 import { LuAlarmClock } from "react-icons/lu";
-const MiniCard = ({ color, src, name, position, time, number, bgcolor }) => {
+const MiniCard = ({
+  color,
+  src,
+  name,
+  position,
+  time,
+  number,
+  bgcolor,
+}: {
+  color: string;
+  src: string;
+  name: string;
+  position: string;
+  time: string;
+  number: any;
+  bgcolor: string;
+}) => {
   // let endTime = time.split(":")[0];
   // console.log(+endTime);
   let endTime = 9 + number;
