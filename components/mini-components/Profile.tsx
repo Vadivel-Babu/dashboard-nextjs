@@ -1,6 +1,14 @@
 import Image from "next/image";
 
-const Profile = ({ color, src, border }) => {
+const Profile = ({
+  color,
+  src,
+  border,
+}: {
+  color: string;
+  src: string;
+  border: any;
+}) => {
   return (
     <div
       className={`w-[44px] h-[44px] rounded-full flex items-baseline justify-center overflow-hidden border-[${border}] border-black ${color}`}
