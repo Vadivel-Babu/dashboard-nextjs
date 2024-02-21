@@ -32,7 +32,7 @@ const ActivePatients = () => {
   return (
     <div className="p-3 bg-[#1B2C4F] flex flex-col gap-4 w-max rounded-3xl">
       {data.map((el, i) => (
-        <div className="flex items-center gap-24">
+        <div className="flex items-center gap-24" key={i}>
           <p className="text-xs">{el.time}</p>
           <div className="flex items-center relative">
             <MiniCard
