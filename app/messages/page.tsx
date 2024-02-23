@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@nextui-org/react";
 import { MdDelete } from "react-icons/md";
 
@@ -10,7 +10,7 @@ type data = {
 };
 
 const page = () => {
-  const [datas, setDatas] = useState([]);
+  const [datas, setDatas] = useState<data[]>([]);
   async function getData() {
     const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/getmail");
     const data = await res.json();
