@@ -10,7 +10,7 @@ type data = {
 };
 
 const page = () => {
-  const [datas, setDatas] = useState<data[]>([]);
+  const [datas, setDatas] = useState([]);
   async function getData() {
     const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/getmail");
     const data = await res.json();
