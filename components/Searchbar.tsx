@@ -1,17 +1,31 @@
+"use client";
 import { Button } from "@nextui-org/react";
+import { useEffect, useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { LuBell } from "react-icons/lu";
 
 const Searchbar = () => {
+  const [name, setName] = useState("");
+  async function getData() {
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/getuser");
+    const data = await res.json();
+    setName(data[0].name);
+
+    console.log(data.name);
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <div className="flex flex-wrap justify-center lg:justify-start">
       <h1 className="hidden md:block">
         Hello,
-        <br /> <span>Dr.Colter! 👋</span>
+        <br /> <span>Dr.{name ? name : "Colter"}! 👋</span>
       </h1>
       <h1 className="block md:hidden">
         Hello,
-        <span>Dr.Colter! 👋</span>
+        <span>Dr.{name ? name : "Colter"}! 👋</span>
       </h1>
       <div className="flex items-center flex-wrap  gap-2">
         <div className="flex items-center">
